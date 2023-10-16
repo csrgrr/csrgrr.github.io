@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p id="message"></p>
+
+    <script>
+   function getCodeFromURL() {
+       const urlParams = new URLSearchParams(window.location.search);
+       const codigo = urlParams.get('code');
+     
+       if (codigo) {
+         const message = `Tu código es ${codigo}`;
+         document.getElementById('message').innerText = message;
+       } else {
+         document.getElementById('message').innerText = 'No se encontró ningún código en la URL.';
+       }
+     }
+     
+     window.onload = getCodeFromURL;
+   </script>
+<footer><button>windows</button></footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    background-color: #008083;
+    margin: 0;
+}
+
+footer {
+    background-color: #C0C0C0;
+    width: 100vw;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+}
+
+footer button {
+    height: 30px;
+    margin: 2.5px;
+}
