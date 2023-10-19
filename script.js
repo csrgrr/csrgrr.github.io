@@ -8,7 +8,7 @@ function displayTime() {
   hours = hours ? hours : 12; 
   minutes = minutes < 10 ? '0' + minutes : minutes;
   let formattedTime = hours + ':' + minutes + ' ' + ampm;
-  document.getElementById('time').innerHTML = formattedTime;
+  document.getElementById('clock').innerHTML = formattedTime;
 }
 
 $(() => {
