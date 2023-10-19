@@ -3,11 +3,25 @@
     src: url('assets/fonts/W95FA.otf') format('truetype');
   }
 
-
+/* BACKGROUND */
 body {
     background-color: #008083;
     margin: 0;
     font-family: W95FA;
+}
+
+.gif{
+    position: absolute;
+    right: 30px;
+    bottom: 35px;
+}
+
+.gif img { 
+    width: auto;
+    height: auto;
+   max-width: 120px;
+   max-height: 120px;
+   resize: inherit;
 }
 
 
@@ -77,6 +91,14 @@ footer button div {
 
     display: flex; 
     flex-direction: row;
+
+    border-style: outset;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-width: 2px;
+    z-index: 1;
 }
 
 #social-banner {
@@ -143,7 +165,9 @@ a {
 
 hr{
     height: 2px;
-    margin: 0;
+    margin: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 

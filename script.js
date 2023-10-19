@@ -13,9 +13,33 @@ function displayTime() {
 
 $(() => {
 
+  //GIF
+  let now = new Date();
+  let month = now.getMonth() + 1; 
+
+  if (month === 10) {
+      $(".gif img").attr("src", "assets/gifs/halloween.gif");
+  } else if (month === 12) {
+      $(".gif img").attr("src", "assets/gifs/christmas.gif");
+  } else {
+      let season;
+      if (month >= 3 && month <= 5) {
+          season = "spring.gif";
+      } else if (month >= 6 && month <= 8) {
+          season = "summer.gif";
+      } else if (month >= 9 && month <= 11) {
+          season = "autumn.gif";
+      } else {
+          season = "winter.gif";
+      }
+
+      $(".gif img").attr("src", "assets/gifs/" + season);
+  }
+
   // CLOCK
   displayTime();
   setInterval(displayTime, 60000);
+
 
   // SOCIAL
   $('#social').hide();
