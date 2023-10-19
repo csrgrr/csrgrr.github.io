@@ -1,15 +1,36 @@
-function getCodeFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const codigo = urlParams.get('code');
-    console.log(codigo)
-  
-    if (codigo) {
-      const message = `Tu código es ${codigo}`;
-      document.getElementById('message').innerText = message;
-    } else {
-      document.getElementById('message').innerText = 'No se encontró ningún código en la URL.';
-    }
-  }
-  
-  window.onload = getCodeFromURL;
-  
+function displayTime() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; 
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  let formattedTime = hours + ':' + minutes + ' ' + ampm;
+  document.getElementById('time').innerHTML = formattedTime;
+}
+
+$(() => {
+
+  // CLOCK
+  displayTime();
+  setInterval(displayTime, 60000);
+
+  // SOCIAL
+  $('#social').hide();
+
+  $('footer button').on('click', function() {
+    $('#social').toggle();
+    $(this).toggleClass("social-active");
+  });
+
+  $("footer button").on("mouseover", function() {
+      $(this).toggleClass("border-active");
+  });
+
+  $("footer button").on("mouseout", function() {
+      $(this).toggleClass("border-active");
+  });
+
+});

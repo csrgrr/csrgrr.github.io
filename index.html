@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <p id="message"></p>
 
-    <script>
-   function getCodeFromURL() {
-       const urlParams = new URLSearchParams(window.location.search);
-       const codigo = urlParams.get('code');
-     
-       if (codigo) {
-         const message = `Tu código es ${codigo}`;
-         document.getElementById('message').innerText = message;
-       } else {
-         document.getElementById('message').innerText = 'No se encontró ningún código en la URL.';
-       }
-     }
-     
-     window.onload = getCodeFromURL;
-   </script>
-<footer><button>windows</button></footer>
+    
+<div id="social">
+    <ul>
+        <li>HOLA</li>
+        <li>HOLA</li>
+        <li>HOLA</li>
+        <li>HOLA</li>
+    </ul>
+</div>
+<footer>
+    <button><img src="assets/icons/windows-logo.png" alt="logo"><div>Social Media</div></button>
+    <div id="time-container"><img src="assets/icons/sound.png" alt="sound" id="sound"><div id="time"></div></div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
