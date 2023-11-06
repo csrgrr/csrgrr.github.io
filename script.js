@@ -21,6 +21,22 @@ $(() => {
         initFunctions();
     });
 
+    $("#projects").dblclick(function() {
+        let title = $(this).find("div").text();
+        let imageSrc = $(this).find("img").attr("src");
+    
+        createWindow(title, imageSrc, "/projects/projects.html");
+        initFunctions();
+    });
+
+    $("#calculator").dblclick(function() {
+        let title = $(this).find("div").text();
+        let imageSrc = $(this).find("img").attr("src");
+    
+        createWindow(title, imageSrc, "/calculator/index.html");
+        initFunctions();
+    });
+
     
 
     //DESKTOP-ICONS

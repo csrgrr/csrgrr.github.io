@@ -1,3 +1,4 @@
+
 .profile-page {
     color: white;
     
@@ -96,6 +97,7 @@
     border-radius: 20px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     padding-top: 10px;
@@ -106,6 +108,28 @@
     margin: 20px;
     margin-top: 10px;
     
+}
+
+/*Certificates*/
+.certificate-container {
+    text-wrap: wrap;
+}
+.certificate-container > div{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+.certificate-container img{
+    width: 3em;
+    margin-bottom: -1em;
+}
+.certificate {
+    width: 10em;
+    padding: 1em;
 }
 
 /*SOCIAL BUTTONS*/
@@ -122,6 +146,11 @@
     margin: 2em;
 }
 
+.email-p {
+    text-overflow: inherit;
+    text-wrap: wrap;
+}
+
 @media (max-width: 750px) {
     .profile-container {
         flex-direction: column;
@@ -134,5 +163,16 @@
         padding-left: 0em; 
         text-align: center;   
     }
+    .email-p {
+        font-size: .7em;
+    }
+
 
   }
+
+  
+@media (max-width: 390px) {
+    .experience-container img {
+        width: 4em;
+    }
+}
