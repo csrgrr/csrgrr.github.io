@@ -33,7 +33,7 @@ $(() => {
         let title = $(this).find("div").text();
         let imageSrc = $(this).find("img").attr("src");
     
-        createWindow(title, imageSrc, "/calculator/index.html");
+        createWindow(title, imageSrc, "/calculator/calculator.html");
         initFunctions();
     });
 
