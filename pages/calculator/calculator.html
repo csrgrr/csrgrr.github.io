@@ -2,35 +2,37 @@
  <link rel="stylesheet" href="/pages/calculator/style.css">
 
  <div class="calculator-page">
-
-
-
     <div class="bodyCalc">
-    <div id="pantalla"></div>
+    <div class="pantalla"></div>
 
-    <div class="buttonscalc">
-    <button class="numbtn" value="1">1</button>
-    <button class="numbtn" value="2">2</button>
-    <button class="numbtn" value="3">3</button>
-    <button class="opbtn" value="/">÷</button>
-    <button class="cbtn" value="c">C</button>
-    <br> 
-    <button class="numbtn" value="4">4</button>
-    <button class="numbtn" value="5">5</button>
-    <button class="numbtn" value="6">6</button>
-    <button class="opbtn" value="*">x</button>
-
-    <br> 
-    <button class="numbtn" value="7">7</button>
-    <button class="numbtn" value="8">8</button>
-    <button class="numbtn" value="9">9</button>
-    <button class="opbtn" value="+">+</button>
-    <br> 
-    <button id="zero" class="numbtn" value="0">0</button>
-    <button id="dot" class="numbtn" value=".">.</button>
-    <button class="opbtn" value="-">-</button>
-    <button id="equal" class="equalbtn" value="=">=</button>
-    <br>
+    <table class="buttonscalc">
+      <tr>
+         <th class="tg-0lax"><button class="numbtn" value="1">1</button></th>
+         <th class="tg-0lax"><button class="numbtn" value="2">2</button></th>
+         <th class="tg-0lax"><button class="numbtn" value="3">3</button></th>
+         <th class="tg-0lax"><button class="opbtn" value="/">÷</button></th>
+         <th class="tg-0lax"><button class="cbtn" value="c">C</button></th>
+       </tr>
+      <tr>
+         <td class="tg-0lax"><button class="numbtn" value="4">4</button></td>
+         <td class="tg-0lax"><button class="numbtn" value="5">5</button></td>
+         <td class="tg-0lax"><button class="numbtn" value="6">6</button></td>
+         <td class="tg-0lax"><button class="opbtn" value="*">x</button></td>
+         <td class="tg-0lax" rowspan="3"><button id="equal" class="equalbtn" value="=">=</button></td>
+       </tr>
+       <tr>
+         <td class="tg-0lax"><button class="numbtn" value="7">7</button></td>
+         <td class="tg-0lax"><button class="numbtn" value="8">8</button></td>
+         <td class="tg-0lax"><button class="numbtn" value="9">9</button></td>
+         <td class="tg-0lax"><button class="opbtn" value="+">+</button></td>
+       </tr>
+       <tr>
+         
+         <td class="tg-0lax" colspan="2"><button id="zero" class="numbtn" value="0">0</button></td>
+         <td class="tg-0lax"><button class="numbtn dot" value=".">.</button></td>
+         <td class="tg-0lax"><button class="opbtn" value="-">-</button></td>
+       </tr>
+    </table>
 
 
 

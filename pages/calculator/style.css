@@ -22,21 +22,22 @@
 
 }
 
-#pantalla { 
-    font-family: calculator;
+.pantalla { 
+    /* font-family: calculator; */
     text-align: end;
     background-color: black;
     box-shadow:inset 2px 2px 3px 1px #707070;
 
 
     color: red;
-    text-shadow: 0px 0px 6px red;
+    /* text-shadow: 0px 0px 2px red; */
     padding: 10px;
+    margin: 5px;
     
     padding-top: 15px;
     padding-bottom: 8px;
     border-radius: 10px;
-    width: 90%;
+    width: 85%;
     height: fit-content;
     font-size: 3em;
 }
@@ -47,8 +48,8 @@
     padding: 10px;
     padding-left: 15px;
     border-radius: 10px;
-    box-shadow:  inset -2px -2px 5px 1px #858585,
-    inset 2px 2px 7px 1px black;
+    /* box-shadow:  inset -2px -2px 5px 1px #858585,
+    inset 2px 2px 7px 1px black; */
 
 }
 
@@ -62,19 +63,15 @@
     background-color: #525252;
     padding: 0;
     margin-bottom: 2px;
-    color: rgb(172, 0, 0);
-    text-shadow: 0px 0px 1px rgb(255, 208, 0);
+    color: rgb(255, 46, 46);
+    /* text-shadow: 0px 0px 1px rgb(255, 208, 0); */
     width: 3em;
     height: 3em;
 
     
 }
 #equal{
-    margin: -20px;
-    position: relative;
-    top: -2em;
-    left: 2em;
-    height: 7em;
+    height: 100%;
 }
 
 
@@ -82,3 +79,10 @@
 #zero{
     width: 6em;
 } 
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}

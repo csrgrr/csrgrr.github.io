@@ -41,7 +41,7 @@ function operar(num1, num2, operacion){
 $(function(){
     //numeros
     let dotTester=false;
-    $("#pantalla").html(numActual);
+    $(".pantalla").html(numActual);
     $(".equalbtn").prop("disabled", true) 
 
     $(".numbtn").click(function(){
@@ -53,13 +53,13 @@ $(function(){
         if($(this).attr("value") == "."){
             dotTester=true;
         }
-            $("#dot").prop("disabled", dotTester) 
+            $(".dot").prop("disabled", dotTester) 
 
     
         
         //meter numeros en numActual
         numActual.push($(this).attr("value"));
-        $("#pantalla").html(numActual);
+        $(".pantalla").html(numActual);
         opTester=false;
     });
 
@@ -69,14 +69,14 @@ $(function(){
     $(".opbtn").click(function(){
         $(".equalbtn").prop("disabled", false) 
         dotTester=false;
-        $("#dot").prop("disabled", dotTester) 
+        $(".dot").prop("disabled", dotTester) 
         //posibilidad de numeros negativos 
         if(((numAlmacenado.length == 0) && (numActual.length == 1) && ($(this).attr("value")== "-")) || (opTester==true)){
             numAlmacenado = numActual;
             numActual = Array("0");
             numActual.pop();
             numActual.push($(this).attr("value"));
-            $("#pantalla").html(numActual);
+            $(".pantalla").html(numActual);
             opTester=false;
         } else {       
             //realizar más de una operación
@@ -84,7 +84,7 @@ $(function(){
                 let num1 = parseFloat(numAlmacenado.join(''))
                 let num2 = parseFloat(numActual.join(''))
                 let resultadoTemporal = operar(num1, num2, operacion);
-                $("#pantalla").html(resultadoTemporal.toString());
+                $(".pantalla").html(resultadoTemporal.toString());
                 numAlmacenado = Array(resultadoTemporal.toString());
                 numActual = Array("0");
                 
@@ -112,19 +112,19 @@ $(function(){
         masOperaciones=false;
         opTester=false;
         dotTester=false;
-        $("#dot").prop("disabled", dotTester) 
+        $(".dot").prop("disabled", dotTester) 
         resultado = 0;
-        $("#pantalla").html(numActual);
+        $(".pantalla").html(numActual);
     });
 
     
     $(".equalbtn").click(function(){
         $(this).prop("disabled", true) 
         dotTester=false;
-        $("#dot").prop("disabled", dotTester) 
+        $(".dot").prop("disabled", dotTester) 
         let num1 = parseFloat(numAlmacenado.join(''))
         let num2 = parseFloat(numActual.join(''))
-        $("#pantalla").html(operar(num1, num2, operacion));
+        $(".pantalla").html(operar(num1, num2, operacion));
         let stringTemporal = operar(num1, num2, operacion).toString();
         operacion = "none";
         numAlmacenado = Array(stringTemporal);
