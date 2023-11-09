@@ -1,0 +1,264 @@
+<pre>
+<h1>IONIC</h1>
+
+<code>
+    
+ionic start newApp sidemenu/tabs
+(newApp)
+(sidemenu es el template que queramos aplicar)
+
+cd newApp
+ionic serve
+
+ionic g page home / ionic generate component home
+
+
+ionic serve (para recargar)
+
+install http -> 
+npm install cordova-plugin-advanced-http
+npm install @ionic-native/http
+ionic cap sync
+
+</code>
+DEPURAR
+https://mbascoy.github.io/knowledge/Programacion/Ionic/Conceptos%20basicos/Depurar%20aplicacion.html
+
+<h3>ion-refresher</h3>
+
+html
+<code>
+  &lt;ion-content>
+  
+  &lt;ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    &lt;ion-refresher-content>&lt;/ion-refresher-content>
+  &lt;/ion-refresher>
+  &lt;ion-router-outlet>&lt;/ion-router-outlet>
+  
+  ...
+  &lt;/ion-content>
+</code>
+
+ts
+<code>
+export class AppComponent {
+
+  constructor() {}
+
+  handleRefresh(event:any) {
+    setTimeout(() => {
+      window.location.reload();
+      event.target.complete();
+    }, 500);
+  }
+ 
+}
+</code>
+
+<h4>ANDROID</h4>
+ionic capacitor add android:
+<a href="https://mbascoy.github.io/knowledge/Programacion/Ionic/Conceptos%20basicos/Lanzar%20aplicacion%20(Web%20-%20Android).html">MBascoy manual</a>
+
+<h3>CAPACITORJS</h3>
+<a href="https://capacitorjs.com/docs/apis/network">Link</a>
+
+
+<h3>APK</h3>
+bash
+<code>
+    ionic build
+    ionic capacitor add android
+    ionic capacitor copy android && cd android && ./gradlew assembleDebug && cd ..
+    
+    Salida de apk:
+    android/app/build/outputs/apk/debug/app-debug.apk
+    
+    Ejecutar en dispositivo:
+    ionic capacitor copy android && cd android && ./gradlew installDebug && cd ..
+    
+    Para Windows a veces no funciona el slash y hay que usar el backslash:
+    .\gradlew
+</code>
+
+<h4>CAPACITOR:</h4>
+
+bash
+<code>
+    npm install @capacitor/network
+</code>
+
+ts
+<code>
+    import { Component } from '@angular/core';
+    import { Network, ConnectionStatus } from "@capacitor/network"
+    
+      
+    @Component({
+      selector: 'app-tab1',
+      templateUrl: 'tab1.page.html',
+      styleUrls: ['tab1.page.scss']
+    })
+    export class Tab1Page {
+    
+      networkStatus: ConnectionStatus | undefined;
+    
+      constructor() {}
+    
+      ngOnInit(){
+        if (Network)
+        {
+          Network.getStatus().then((status)=>{
+            this.networkStatus = status;
+          })
+        }
+    
+        Network.addListener("networkStatusChange", status=>{
+          this.networkStatus=status;
+        })
+      } 
+    
+    }
+</code>
+
+
+html
+<code>
+      &lt;div>
+        &lt;strong>Network status&lt;/strong>
+        &lt;div>{{ networkStatus | json }}&lt;/div>
+      &lt;/div>
+</code>
+
+<h4>CAPACITOR DEEP LINKS</h4>
+<a href="https://devdactic.com/setup-deep-links-capacitor">Manual</a><br>
+<a href="https://developer.android.com/training/app-links/deep-linking?hl=es-419">more</a><br>
+<a href="https://developer.android.com/training/app-links/verify-android-applinks?hl=es-419">more</a>
+
+
+- Crear app de IONIC
+- Introducir inicializeApp en app.component.ts:
+
+ts
+<code>
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
+import { App, URLOpenListenerEvent } from '@capacitor/app';
+  
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+})
+
+export class AppComponent {
+  constructor(private router: Router, private zone: NgZone) {
+    this.initializeApp();
+}
+
+initializeApp() {
+  App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
+      this.zone.run(() => {
+        const domain = 'csrgrr.github.io';
+        const pathArray = event.url.split(domain);
+        const appPath = pathArray.pop();
+          if (appPath) {
+              this.router.navigateByUrl(appPath);
+          }
+      });
+  });
+} 
+
+}
+</code>
+<ul>
+    <li>Buscar el namespace en "android\\app\\build.gradle" (en este caso "io.ionic.starter")</li>
+    <li>Modificar android\\app\\src\\main\\AndroidManifest.xml para incluir:</li>
+</ul>
+
+
+xml
+<code>
+                &lt;intent-filter android:autoVerify="true">
+                    &lt;action android:name="android.intent.action.VIEW" />
+                &lt;category android:name="android.intent.category.DEFAULT" />
+                &lt;category android:name="android.intent.category.BROWSABLE" />
+                &lt;data android:scheme="https" android:host="csrgrr.github.io" />
+            &lt;/intent-filter>
+</code>
+
+<i>Meter dentro de "activity" y no borrar el otro "intent-filter". Poner debajo.</i>
+- Buscar y copiar fingerprint (SHA256):
+
+bash
+<code>
+    cd android
+    .\gradlew signingReport
+</code>
+
+
+- Entrar aqui y poner especificaciones: https://developers.google.com/digital-asset-links/tools/generator?hl=es-419
+<strong>Dominio:</strong> csrgrr.github.io
+<strong>App Package:</strong> io.ionic.starter
+<strong>Fingerprint:</strong> <i>codigo SHA256 copiado</i>
+
+- Ir a la raiz del dominio y crear un archivo **\_config.yaml** con el siguiente contenido
+
+yaml
+<code>
+theme: jekyll-theme-cayman 
+
+include: [".well-known"]
+</code>
+
+- En la raiz incluir una carpeta y un archivo json (/.well-known/assetlinks.json) el contenido devuelto por el generador de google.
+
+Para poner varios podría hacerse:
+
+json
+<code>
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "io.ionic.starter",
+            "sha256_cert_fingerprints": [          "CC:81:C6:EE:99:9B:18:08:40:2B:59:32:FA:9D:2E:DC:12:0D:4A:C5:54:C9:10:84:19:14:1D:C1:2C:4D:29:D9"
+            ]
+        }
+    },
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.gestmusic.ot2023",
+            "sha256_cert_fingerprints": [                "CC:81:C6:EE:99:9B:18:08:40:2B:59:32:FA:9D:2E:DC:12:0D:4A:C5:54:C9:10:84:19:14:1D:C1:2C:4D:29:D9"
+            ]
+        }
+    }
+]
+</code>
+
+El **prefix** condiciona la ruta, de modo que si le establecemos un prefix "/hamtaro", este deberá llegar a algún lugar (si la ruta https://csrgrr.github.io/hamtaro/tabs/settings no existe en la aplicación de por sí, no llevará a ningún lado).
+
+xml
+<code>
+    &lt;data android:scheme="https" android:host="csrgrr.github.io" android:pathPrefix="hamtaro" />
+</code>
+
+La solución para esto sería la de modificar la ruta raiz en app.component.ts:
+
+ts
+<code>
+initializeApp() {
+	...
+        const domain = 'csrgrr.github.io/hamtaro';
+        ...
+        }
+</code>
+Lo mismo ocurre con el scheme, si no existe como tal en la ruta no te va a redireccionar a ningún lado
+
+</pre>
+
+
+
+<script src="/pages/handbook/script.js"></script>

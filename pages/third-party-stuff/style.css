@@ -1,0 +1,46 @@
+.tp-card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: auto;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.tp-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 15em;
+    margin: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+    border: outset;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: black;
+    border-bottom-color: black;
+
+    box-shadow: 3px 3px 10px rgba(0, 0, 0);
+    text-align: center;
+    padding: 1em;
+}
+.tp-title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.tp-card hr{
+    width: 100%;
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 505px) {
+    .tp-card {
+        width: 70%;
+    }
+}

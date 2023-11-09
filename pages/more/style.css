@@ -1,0 +1,21 @@
+
+.hobby-container {
+    text-wrap: wrap;
+}
+.hobby-container > div{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+.hobby-container img{
+    width: 3em;
+    margin-bottom: -1em;
+}
+.hobby {
+    width: 10em;
+    padding: 1em;
+}

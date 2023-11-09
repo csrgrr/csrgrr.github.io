@@ -37,6 +37,30 @@ $(() => {
         initFunctions();
     });
 
+    $("#handbook").dblclick(function() {
+        let title = $(this).find("div").text();
+        let imageSrc = $(this).find("img").attr("src");
+    
+        createWindow(title, imageSrc, "/handbook/handbook.html");
+        initFunctions();
+    });
+
+    $("#third-party-stuff").dblclick(function() {
+        let title = $(this).find("div").text();
+        let imageSrc = $(this).find("img").attr("src");
+    
+        createWindow(title, imageSrc, "/third-party-stuff/third-party-stuff.html");
+        initFunctions();
+    });
+
+    $("#more").dblclick(function() {
+        let title = $(this).find("div").text();
+        let imageSrc = $(this).find("img").attr("src");
+    
+        createWindow(title, imageSrc, "/more/more.html");
+        initFunctions();
+    });
+
     
 
     //DESKTOP-ICONS
