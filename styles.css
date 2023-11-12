@@ -107,9 +107,9 @@ body {
 
   }
 
-  .window:has(.profile-page) {
+  /* .window:has(.profile-page) {
     background-color: rgb(0, 0, 0);
-  }
+  } */
   .window:has(.calculator-page) {
     width: fit-content;
     height: fit-content;

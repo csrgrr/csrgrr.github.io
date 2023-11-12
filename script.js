@@ -11,6 +11,7 @@ $(() => {
     
         createWindow(title, imageSrc, "/about-me/about-me.html");
         initFunctions();
+        $(".window:last").css("background-color", "black");
     });
 
     $("#about-me").dblclick(function() {
@@ -19,6 +20,8 @@ $(() => {
     
         createWindow(title, imageSrc, "/about-me/about-me.html");
         initFunctions();
+        $(".window:last").css("background-color", "black");
+        $(".window:last").css("z-index", "100");
     });
 
     $("#projects").dblclick(function() {
@@ -27,6 +30,9 @@ $(() => {
     
         createWindow(title, imageSrc, "/projects/projects.html");
         initFunctions();
+        $(".window:last").css("background-color", "#C0C0C0");
+        $(".window:last").css("z-index", "100");
+       
     });
 
     $("#calculator").dblclick(function() {
@@ -35,6 +41,9 @@ $(() => {
     
         createWindow(title, imageSrc, "/calculator/calculator.html");
         initFunctions();
+
+        $(".window:last").css("background-color", "#8d8d8d");
+        $(".window:last").css("z-index", "100");
     });
 
     $("#handbook").dblclick(function() {
@@ -43,6 +52,8 @@ $(() => {
     
         createWindow(title, imageSrc, "/handbook/handbook.html");
         initFunctions();
+        $(".window:last").css("background-color", "#C0C0C0");
+        $(".window:last").css("z-index", "100");
     });
 
     $("#third-party-stuff").dblclick(function() {
@@ -51,6 +62,8 @@ $(() => {
     
         createWindow(title, imageSrc, "/third-party-stuff/third-party-stuff.html");
         initFunctions();
+        $(".window:last").css("background-color", "#C0C0C0");
+        $(".window:last").css("z-index", "100");
     });
 
     $("#more").dblclick(function() {
@@ -59,6 +72,8 @@ $(() => {
     
         createWindow(title, imageSrc, "/more/more.html");
         initFunctions();
+        $(".window:last").css("background-color", "#C0C0C0");
+        $(".window:last").css("z-index", "100");
     });
 
     
