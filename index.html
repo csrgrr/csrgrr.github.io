@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Porfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/icons/windows-logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/windows-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--WINDOWS-->
     <!-- <div class="window">
         <div class="window-header">
@@ -30,87 +28,150 @@
         </div>
     </div> -->
 
-
     <!--DESKTOP ELEMENTS-->
     <div class="desktop-element-container">
-        <div class="desktop-element" id="about-me">
-            <img src="assets/desktop/user-computer.png" alt="about-me">
-            <div>About Me</div>
-        </div>
-        <div class="desktop-element" id="projects">
-            <img src="assets/desktop/projects.png" alt="projects">
-            <div>Projects</div>
-        </div>
-        <div class="desktop-element" id="handbook">
-            <img src="assets/desktop/handbook.png" alt="handbook">
-            <div>Handbook</div>
-        </div>
-        <div class="desktop-element" id="third-party-stuff">
-            <img src="assets/desktop/third-party-resources.png" alt="third-party-stuff">
-            <div>Third Party Resources</div>
-        </div>
-        <div class="desktop-element" id="more">
-            <img src="assets/icons/more.ico" alt="more">
-            <div>More About Me</div>
-        </div>
-        <div class="desktop-element" id="calculator">
-            <img src="assets/icons/calculator.png" alt="calculator">
-            <div>Calculator</div>
-        </div>
+      <div class="desktop-element" id="about-me">
+        <img src="assets/desktop/user-computer.png" alt="about-me" />
+        <div>About Me</div>
+      </div>
+      <div class="desktop-element" id="projects">
+        <img src="assets/desktop/projects.png" alt="projects" />
+        <div>Projects</div>
+      </div>
+      <div class="desktop-element" id="handbook">
+        <img src="assets/desktop/handbook.png" alt="handbook" />
+        <div>Handbook</div>
+      </div>
+      <div class="desktop-element" id="third-party-stuff">
+        <img
+          src="assets/desktop/third-party-resources.png"
+          alt="third-party-stuff"
+        />
+        <div>Third Party Resources</div>
+      </div>
+      <div class="desktop-element" id="more">
+        <img src="assets/icons/more.ico" alt="more" />
+        <div>More About Me</div>
+      </div>
+      <div class="desktop-element" id="calculator">
+        <img src="assets/icons/calculator.png" alt="calculator" />
+        <div>Calculator</div>
+      </div>
     </div>
 
     <!--GIF-->
     <div class="gif">
-        <img src="assets/gifs/transparent.png" alt="season-holiday">
+      <img src="assets/gifs/transparent.png" alt="season-holiday" />
     </div>
     <!-- FOOTER   -->
     <div id="social">
-        <div id="social-banner">
-            <p><span>@</span>csrgrr</p>
+      <div id="social-banner">
+        <p><span>@</span>csrgrr</p>
+      </div>
+      <div id="social-buttons-container">
+        <div class="social-button" onclick="copyToClipboard()">
+          <img
+            src="assets/icons/mail.png"
+            alt="mail"
+            class="social-button-icon"
+          />
+          <div class="social-button-text" id="copy-mail">
+            guerramendezcesar@gmail.com
+          </div>
+          <img
+            src="assets/icons/copy.png"
+            alt="copy"
+            class="social-button-tool"
+          />
         </div>
-        <div id="social-buttons-container" >
-            <div class="social-button" onclick="copyToClipboard()"><img src="assets/icons/mail.png" alt="mail" class="social-button-icon">
-                <div class="social-button-text" id="copy-mail">guerramendezcesar@gmail.com</div>
-                <img src="assets/icons/copy.png" alt="copy" class="social-button-tool">
-            </div>
-            <hr>
-            <a href="https://github.com/csrgrr" target="_blank" class="social-button">
-                <img src="assets/icons/github.png" alt="github" class="social-button-icon">
-                <div class="social-button-text">github</div>
-                <img src="assets/icons/link.png" alt="link" class="social-button-tool">
-            </a>
-            <a href="https://www.linkedin.com/in/c%C3%A9sar-guerra-m%C3%A9ndez-65a362118/" target="_blank"
-                class="social-button">
-                <img src="assets/icons/linkedin.png" alt="linkedin" class="social-button-icon">
-                <div class="social-button-text">linkedin</div>
-                <img src="assets/icons/link.png" alt="link" class="social-button-tool">
-            </a>
-            <a href="https://liverpool.academia.edu/C%C3%A9sarGuerraM%C3%A9ndez" target="_blank" class="social-button">
-                <img src="assets/icons/academia.png" alt="academia" class="social-button-icon">
-                <div class="social-button-text">academia.edu</div>
-                <img src="assets/icons/link.png" alt="link" class="social-button-tool">
-            </a>
-            <a href="https://www.behance.net/csarguerramnde" target="_blank" class="social-button">
-                <img src="assets/icons/behance.png" alt="behance" class="social-button-icon">
-                <div class="social-button-text">behance</div>
-                <img src="assets/icons/link.png" alt="link" class="social-button-tool">
-            </a>
-        </div>
+        <hr />
+        <a
+          href="https://github.com/csrgrr"
+          target="_blank"
+          class="social-button"
+        >
+          <img
+            src="assets/icons/github.png"
+            alt="github"
+            class="social-button-icon"
+          />
+          <div class="social-button-text">github</div>
+          <img
+            src="assets/icons/link.png"
+            alt="link"
+            class="social-button-tool"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/c%C3%A9sar-guerra-m%C3%A9ndez-65a362118/"
+          target="_blank"
+          class="social-button"
+        >
+          <img
+            src="assets/icons/linkedin.png"
+            alt="linkedin"
+            class="social-button-icon"
+          />
+          <div class="social-button-text">linkedin</div>
+          <img
+            src="assets/icons/link.png"
+            alt="link"
+            class="social-button-tool"
+          />
+        </a>
+        <a
+          href="https://liverpool.academia.edu/C%C3%A9sarGuerraM%C3%A9ndez"
+          target="_blank"
+          class="social-button"
+        >
+          <img
+            src="assets/icons/academia.png"
+            alt="academia"
+            class="social-button-icon"
+          />
+          <div class="social-button-text">academia.edu</div>
+          <img
+            src="assets/icons/link.png"
+            alt="link"
+            class="social-button-tool"
+          />
+        </a>
+        <a
+          href="https://www.behance.net/csarguerramnde"
+          target="_blank"
+          class="social-button"
+        >
+          <img
+            src="assets/icons/behance.png"
+            alt="behance"
+            class="social-button-icon"
+          />
+          <div class="social-button-text">behance</div>
+          <img
+            src="assets/icons/link.png"
+            alt="link"
+            class="social-button-tool"
+          />
+        </a>
+      </div>
     </div>
     <footer>
-        <div id="left-footer-container">
-            <button id="social-button"><img src="assets/icons/windows-logo.png" alt="logo">
-                <div>Contact</div>
-            </button>
-        </div>
+      <div id="left-footer-container">
+        <button id="social-button">
+          <img src="assets/icons/windows-logo.png" alt="logo" />
+          <div>Contact</div>
+        </button>
+      </div>
 
-        <div id="clock-container"><img src="assets/icons/LAN.png" alt="lan"><img src="assets/icons/sound.png"
-                alt="sound">
-            <div id="clock"></div>
-        </div>
+      <div id="clock-container">
+        <img src="assets/icons/LAN.png" alt="lan" /><img
+          src="assets/icons/sound.png"
+          alt="sound"
+        />
+        <div id="clock"></div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

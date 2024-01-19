@@ -1,120 +1,114 @@
-.projects-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.projects-page h2{
-    margin: 1em;
+.projects-page h2 {
+  margin: 1em;
 }
-
 
 .project-card-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 22em;
+  margin-top: 1em;
+  /* height: 0em; */
 
-    width: 22em;
-    margin-top: 1em;
-    /* height: 0em; */
+  border: outset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
 
-    border: outset;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: black;
-    border-bottom-color: black;
-
-    box-shadow: 3px 3px 10px rgba(0, 0, 0);
-
+  box-shadow: 3px 3px 10px rgba(0, 0, 0);
 }
 
 .project-img {
-    width: 20em;
-    height: auto;
-    resize: none;
-    margin: auto;
-    margin-top: .8em;
-    margin-bottom: .8em;
-    border: outset 5px;
-    border-top-color: black;
-    border-left-color: black;
-    border-right-color: white;
-    border-bottom-color: white;
+  width: 20em;
+  height: auto;
+  resize: none;
+  margin: auto;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  border: outset 5px;
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
 }
 
 .project-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    border: outset;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: black;
-    border-bottom-color: black;
-    
+  border: outset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
 }
 
 .project-title {
-    font-weight: 900;
-    margin: .8em;
-    overflow: hidden;
+  font-weight: 900;
+  margin: 0.8em;
+  overflow: hidden;
 }
 
 .project-description {
-    margin: .8em;
+  margin: 0.8em;
 }
 
 .project-technologies {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    margin-right: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-right: 1em;
 }
 
-.project-technologies img{
-    width: 1.7em;
-    margin: .3em;
+.project-technologies img {
+  width: 1.7em;
+  margin: 0.3em;
 }
 
 .project-buttons {
-    text-align: end;
-    margin: .8em;
+  text-align: end;
+  margin: 0.8em;
 }
-.project-buttons button{
-    
-    font-weight: 700;
-    cursor: pointer;
-    background-color: #C0C0C0;
-    border: outset;
-    border-top-color: white;
-    border-left-color: white;
-    border-right-color: black;
-    border-bottom-color: black;
-    
+.project-buttons button {
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #c0c0c0;
+  border: outset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: black;
+  border-bottom-color: black;
 }
 .project-buttons button:hover {
-    border-top-color: black;
-    border-left-color: black;
-    border-right-color: white;
-    border-bottom-color: white;
+  border-top-color: black;
+  border-left-color: black;
+  border-right-color: white;
+  border-bottom-color: white;
 }
 
 @media (max-width: 657px) {
-    .project-card {
-        width: 80%;
-    }
-    .project-img {
-        width: 80%;
-    }
+  .project-card {
+    width: 80%;
+  }
+  .project-img {
+    width: 80%;
+  }
 }
