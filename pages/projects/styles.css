@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   margin-right: 1em;
 }
@@ -82,6 +83,10 @@
 .project-technologies img {
   width: 1.7em;
   margin: 0.3em;
+}
+
+.project-technologies img[alt="bluetooth"] {
+  width: 1.2em;
 }
 
 .project-buttons {

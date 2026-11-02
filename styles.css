@@ -60,6 +60,10 @@ body {
   margin-bottom: 5px;
 }
 
+#projects img {
+  width: 55px;
+}
+
 .desktop-element div {
   cursor: default;
   text-align: center;
@@ -336,7 +340,9 @@ footer #clock-container {
   margin-right: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  box-shadow: inset -2px -2px rgb(255, 255, 255), inset 2px 2px #444444;
+  box-shadow:
+    inset -2px -2px rgb(255, 255, 255),
+    inset 2px 2px #444444;
 
   font-size: 15px;
 }
@@ -358,7 +364,9 @@ body *::-webkit-scrollbar-button {
   width: 16px;
   height: 16px;
   background: silver;
-  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
+  box-shadow:
+    inset 1px 1px #dfdfdf,
+    inset -1px -1px gray;
   border: 1px solid;
   border-color: silver #000 #000 silver;
 }
